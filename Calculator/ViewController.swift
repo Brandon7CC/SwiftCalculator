@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func clear(_ sender: UIButton) {
-        displayBuffer = "";
+        displayBuffer = ""
         self.updateDisplay.text = "0"
     }
    
