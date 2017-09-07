@@ -63,7 +63,7 @@ class ViewController: UIViewController {
             updateDisplay.text = "\(result)"
             displayBuffer = "\(result)"
         } else {
-            updateDisplay.text = "÷ 0!"
+            updateDisplay.text = "Divide by Zero"
         }
         
         self.firstOperand = ""
