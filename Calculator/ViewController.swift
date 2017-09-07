@@ -57,6 +57,9 @@ class ViewController: UIViewController {
         
         ops = ""
         updateDisplay.text = "\(result)"
+        displayBuffer = "\(result)"
+        self.firstOperand = ""
+        self.secondOperand = ""
     }
 }
 
