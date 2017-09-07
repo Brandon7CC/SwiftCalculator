@@ -42,22 +42,30 @@ class ViewController: UIViewController {
         secondOperand = displayBuffer
         displayBuffer = ""
         
-        var result = 0.0
+        var result = 0.0, nan = false
         if ops == "+"{
             result = Double(firstOperand)! + Double(secondOperand)!
         } else if ops == "*" {
             result = Double(firstOperand)! * Double(secondOperand)!
         } else if ops == "÷" {
-            if secondOperand != "0" {
+            if Double(secondOperand) != 0 {
                 result = Double(firstOperand)! / Double(secondOperand)!
+            } else {
+                nan = true
             }
         } else if ops == "-" {
             result = Double(firstOperand)! - Double(secondOperand)!
         }
         
         ops = ""
-        updateDisplay.text = "\(result)"
-        displayBuffer = "\(result)"
+        
+        if !nan {
+            updateDisplay.text = "\(result)"
+            displayBuffer = "\(result)"
+        } else {
+            updateDisplay.text = "÷ 0!"
+        }
+        
         self.firstOperand = ""
         self.secondOperand = ""
     }
